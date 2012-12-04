@@ -36,11 +36,23 @@ define( 'LTRCPR_URL', plugins_url('/', __FILE__) );
 class linkterceptor {
 
 	function __construct() {
-
+		add_action('wp_enqueue_scripts', array( $this, 'linkterceptor_scripts') );
+		add_action( 'wp_ajax_nopriv_linktercept', array( $this, 'linktercept') );
+		add_action( 'wp_ajax_linktercept', array( $this, 'linktercept') );
+	
 	}
 	
 	function linkterceptor_scripts() {
 		wp_enqueue_script('linkterceptor', LTRCPR_URL . 'assets/js/linkterceptor.js', array( 'jquery' ));
+	}
+	
+	function linktercept() {
+	
+		$link = $_POST['url'];
+		$link_title = $_POST['link_title'];
+		
+		die();
+	
 	}
 
 }

@@ -87,6 +87,15 @@ jQuery(document).ready(function() {
 		evt.preventDefault();
 		var element = jQuery(this);
 		var url = element.attr("href");
+		var link_title = element.attr("title");
+		jQuery.post(ajaxurl, {
+			action: 'linktercept',
+			link_title: link_title,
+			url: url
+		},
+		function (response) {
+			
+		});
 		
 	});
 
