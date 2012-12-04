@@ -25,5 +25,20 @@ License: GPL2
 */
 
 
+//Set up some constants
+define( 'LTRCPR_SLUG', 'linkterceptor' );
+define( 'LTRCPR_TITLE', 'Linkterceptor' );
+define( 'LTRCPR_MENU_SLUG', LTRCPR_SLUG . '-menu' );
+define( 'LTRCPR_ROOT', dirname(__FILE__) );
+define( 'LTRCPR_FILE_PATH', LTRCPR_ROOT . '/' . basename(__FILE__) );
+define( 'LTRCPR_URL', plugins_url('/', __FILE__) );
+
+class linkterceptor {
+
+}
+
+
+global $linkterceptor;
+$linkterceptor = new linkterceptor();
 
 ?>
