@@ -35,6 +35,14 @@ define( 'LTRCPR_URL', plugins_url('/', __FILE__) );
 
 class linkterceptor {
 
+	function __construct() {
+
+	}
+	
+	function linkterceptor_scripts() {
+		wp_enqueue_script('linkterceptor', LTRCPR_URL . 'assets/js/linkterceptor.js', array( 'jquery' ));
+	}
+
 }
 
 
