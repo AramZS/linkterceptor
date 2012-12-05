@@ -33,6 +33,17 @@ define( 'LTRCPR_ROOT', dirname(__FILE__) );
 define( 'LTRCPR_FILE_PATH', LTRCPR_ROOT . '/' . basename(__FILE__) );
 define( 'LTRCPR_URL', plugins_url('/', __FILE__) );
 
+require_once(RSSPF_ROOT . "/lib/OpenGraph.php");
+
+/** This is the function to check the HTML of each item for open tags and close them.
+ * I've altered it specifically for some odd HTML artifacts that occur when WP sanitizes the content input.
+**/
+require_once(RSSPF_ROOT . "/lib/htmlchecker.php");
+
+//A slightly altered version of the Readability library from Five Filters, who based it off readability.com's code.
+//As modified for the Center for History and New Media at GMU.
+require_once(RSSPF_ROOT . "/lib/fivefilters-readability/Readability.php");
+
 class linkterceptor {
 
 	function __construct() {
